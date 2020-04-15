@@ -1,0 +1,15 @@
+#copy_bin_v1.0.exe
+	1.该文件适用于NDT新框架的FW，将obj目录下的NDT_FW.bin文件重命名为版本号.bin后拷贝到指定文件夹。
+	2.将该文件放在keil工程的根目录下，双击运行一次，会自动生成copy_bin.ini文件。
+	3.修改copy_bin.ini文件，添加三项内容：项目对应的宏；目标文件夹；子版本号对应的文件（主版本号会自动搜索src\project\compile_option.h获得）。
+	4.打开keil工程，在Option->User->After Build->Run #2->User Command 添加.\copy_bin_v1.0.exe。
+	
+#NDT_Fw_Convertor.exe
+	1.该文件适用于将bin文件转换为nfw文件。
+	2.将bin文件拖入到工具界面，点击Generate则会在bin文件目录生成nfw文件。
+	3.若勾选Auto update bat file，则会更新bat升级脚本中的nfw文件名。
+	4.若勾选Auto update fw version，则会根据bin文件名去填充fw版本。比如0.1.0.2.bin,则版本号会填充为0 1 0 2.
+	
+#NDT_BOX_APPS_v1.1.exe
+	1.用于调试NDTBOX的工具。
+	2.需配合usb2io.dll和USBIOX.DLL使用。
